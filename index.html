@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta  name="viewport" content="width-device-width,initial scale=1.0"
+        <title> RETAIL SHOP </title>
+        <link  rel="stylesheet"  href=" style.css">
+        <script>
+            function calculateTotal() {
+                const productPrices = {
+                    product1: 20,
+                    product2: 200,
+                    product3: 25,
+                    product4: 100
+                };
+                const product = document.getElementById('product').value;
+                const quantity = document.getElementById('quantity').value;
+                const total = productPrices[product] * quantity;
+                document.getElementById('total').innerText = 'Total Price: Rs ' + total;
+            }
+        </script>
+        
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to My Retail Shop</h1>
+            <nav>
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Product">Product</a></li>
+                    <li><a href="#Customer">Customer Orders</a></li>
+                    <li><a href="#Contacts">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="Products">
+            <h2>Products</h2>
+            <img src="download (1).jfif" alt="My Retail Shop" width="300" height="200">
+            <ol>
+                <li>Product1-Rs20</li>
+                <li>Product2-Rs200</li>
+                <li>Product3-Rs25</li>
+                <li>Product4-Rs100</li>
+            </ol>
+        </section>
+        <section id="Orders">
+            <h2>Customer Orders</h2>
+            <img src="D_CE04-Retail-Update-Creative_Placing-orders_690x500.avif" alt="My Retail Shop" width="300" height="200">
+            <ul>
+                <li>Product 1 - Quantity: 2</li>
+                <li>Product 2 - Quantity: 5</li>
+                <li>Product 3 - Quantity: 3</li>
+                <li>Product 4 - Quantity: 56</li>
+            </ul>
+            <h3>PLACE YOUR ORDER</h3>
+            <form onsubmit="event.preventDefault(); calculateTotal();">
+              <label for="product">Select product:</label>
+              <select id="product" name="product">
+                <option value="product1">Product1-Rs20</Product1-Rs20></option>
+                <option value="product2">Product2-Rs200</Product2-Rs200></option>
+                <option value="product3">Product3-Rs25</Product3-Rs25></option>
+                <option value="product4">Product4-Rs100</Product4-Rs100></option>
+              </select>
+              <br>
+              <label for="Quantity">Quantity:</label>
+              <input type="number" id="quantity" name="Quantity" min="1" required>
+              <br>
+              <button type="Submit">Calculate Total</button>
+            </form>
+            <p id="total" style="font-weight: bold; margin-top: 20px;"></p>
+            
+        </section>
+        <section id="Contacts">
+            <h2>Contact Us</h2>
+            <p>navaeedhan12345@gmail.com</p>
+        </section>
+        <footer>
+            <p>&copy; 2024 My Retail Shop</p>
+        </footer>
+    </body>
+
+</html>
