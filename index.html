@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset = "UTF-8">
-        <meta  name="viewport" content="width-device-width,initial scale=1.0"
+        <meta  name="viewport" content="width-device-width,initial scale=1.0">
         <title> RETAIL SHOP </title>
         <link  rel="stylesheet"  href=" style.css">
         <script>
@@ -18,6 +18,19 @@
                 const total = productPrices[product] * quantity;
                 document.getElementById('total').innerText = 'Total Price: Rs ' + total;
             }
+            function submitOrder() {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const address = document.getElementById('address').value;
+                const product = document.getElementById('product').value;
+                const quantity = document.getElementById('quantity').value;
+    
+                if (name && email && address && product && quantity) {
+                    alert(`Order Summary:\nName: ${name}\nEmail: ${email}\nAddress: ${address}\nProduct: ${product}\nQuantity: ${quantity}`);
+                } else {
+                    alert('Please fill in all fields.');
+                }
+            }
         </script>
         
     </head>
@@ -28,7 +41,8 @@
                 <ul>
                     <li><a href="#Home">Home</a></li>
                     <li><a href="#Product">Product</a></li>
-                    <li><a href="#Customer">Customer Orders</a></li>
+                    <li><a href="#Customer">Quantity</a></li>
+                    <li><a href="#Customer">Orders</a></li>
                     <li><a href="#Contacts">Contact</a></li>
                 </ul>
             </nav>
@@ -43,24 +57,40 @@
                 <li>Product4-Rs100</li>
             </ol>
         </section>
-        <section id="Orders">
-            <h2>Customer Orders</h2>
+        <section id="Stocks">
+            <h2>Quantity</h2>
             <img src="D_CE04-Retail-Update-Creative_Placing-orders_690x500.avif" alt="My Retail Shop" width="300" height="200">
             <ul>
-                <li>Product 1 - Quantity: 2</li>
-                <li>Product 2 - Quantity: 5</li>
-                <li>Product 3 - Quantity: 3</li>
-                <li>Product 4 - Quantity: 56</li>
+                <li>Product 1 - Quantity:50</li>
+                <li>Product 2 - Quantity:80</li>
+                <li>Product 3 - Quantity: 80</li>
+                <li>Product 4 - Quantity: 100</li>
             </ul>
+            </section>
+            <section id="Orders">
+                <h2>Orders</h2>
             <h3>PLACE YOUR ORDER</h3>
+            <img src="download3.png" alt="My Retail Shop" width="300" height="200">
             <form onsubmit="event.preventDefault(); calculateTotal();">
               <label for="product">Select product:</label>
               <select id="product" name="product">
-                <option value="product1">Product1-Rs20</Product1-Rs20></option>
-                <option value="product2">Product2-Rs200</Product2-Rs200></option>
-                <option value="product3">Product3-Rs25</Product3-Rs25></option>
-                <option value="product4">Product4-Rs100</Product4-Rs100></option>
+                <option value="product1">Product1-Rs20</option>
+                <option value="product2">Product2-Rs200</option>
+                <option value="product3">Product3-Rs25</option>
+                <option value="product4">Product4-Rs100</option>
               </select>
+              <br>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+              <br>
+              <label for="email">Email:</label>
+              <input type="text" id="email" name="email"  required>
+              <br>
+              <label for="Address">Address:</label>
+              <input type="text" id="address" name="address"  required>
+              <br>
+              <label for="Phone no.">Phone No:</label>
+              <input type="numb" id="phone no" name="phone no" required>
               <br>
               <label for="Quantity">Quantity:</label>
               <input type="number" id="quantity" name="Quantity" min="1" required>
@@ -72,7 +102,9 @@
         </section>
         <section id="Contacts">
             <h2>Contact Us</h2>
+            <img src="download6.png" alt="My Retail Shop" width="270" height="200">
             <p>navaeedhan12345@gmail.com</p>
+            <p>7329806584</p>
         </section>
         <footer>
             <p>&copy; 2024 My Retail Shop</p>
