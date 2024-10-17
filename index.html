@@ -22,11 +22,12 @@
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const address = document.getElementById('address').value;
+                const PhoneNo = document.getElementById('PhoneNo').value;
                 const product = document.getElementById('product').value;
                 const quantity = document.getElementById('quantity').value;
     
                 if (name && email && address && product && quantity) {
-                    alert(`Order Summary:\nName: ${name}\nEmail: ${email}\nAddress: ${address}\nProduct: ${product}\nQuantity: ${quantity}`);
+                    alert(`Order Summary:\nName: ${name}\nEmail: ${email}\nAddress: ${address}\nPhoneNo:${PhoneNo}\nProduct: ${product}\nQuantity: ${quantity}`);
                 } else {
                     alert('Please fill in all fields.');
                 }
