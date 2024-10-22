@@ -32,6 +32,16 @@
                     alert('Please fill in all fields.');
                 }
             }
+            function confirmDelivery() {
+                const deliveryAddress = document.getElementById('delivery-address').value;
+                const deliveryDate = document.getElementById('delivery-date').value;
+    
+                if (deliveryAddress && deliveryDate) {
+                    alert(`Delivery Details:\nAddress: ${deliveryAddress}\nDate: ${deliveryDate}`);
+                } else {
+                    alert('Please fill in all delivery details.');
+                }
+            }
         </script>
         
     </head>
@@ -99,6 +109,20 @@
               <button type="Submit">Calculate Total</button>
             </form>
             <p id="total" style="font-weight: bold; margin-top: 20px;"></p>
+                </section>
+            <section>
+            <section id="Delivery">
+            <h2>Delivery Details</h2>
+                <form onsubmit="event.preventDefault(); confirmDelivery();">
+                    <label for="delivery-address">Delivery Address:</label>
+                    <input type="text" id="delivery-address" name="delivery-address" required>
+                    <br>
+                    <label for="delivery-date">Preferred Delivery Date:</label>
+                    <input type="date" id="delivery-date" name="delivery-date" required>
+                    <br>
+                    <button type="submit">Confirm Delivery</button>
+                </form>
+            </section>
             
         </section>
         <section id="Contacts">
